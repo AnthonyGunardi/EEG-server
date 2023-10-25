@@ -40,6 +40,30 @@ const userSchema = new Schema({
     warna_favorit:{
       type:String,
       required:true,
+    },
+    nama_perusahaan: {
+      type:String,
+      default: ''
+    },
+    jabatan: {
+      type:String,
+      default: ''
+    },
+    extraversion_scale: {
+      type:String,
+      default: ''
+    },
+    conscienceness_scale: {
+      type:String,
+      default: ''
+    },
+    forSales_scale: {
+      type:String,
+      default: ''
+    },
+    pauli_persentase_benar: {
+      type:String,
+      default: ''
     }
 });
 module.exports = mongoose.model('Users',userSchema);
