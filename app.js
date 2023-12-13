@@ -10,13 +10,13 @@ const authRoutes = require('./routes/auth');
 const userRoutes=require('./routes/user')
 const MONGODB_URI =api_key.mongo;
 const app = express();
-const options = {
-  key: fs.readFileSync('../ssl/privateKey.pem'),
-  cert: fs.readFileSync('../ssl/anthonygunardi_com_cert.pem'),
-};
-const server = https.createServer(
-  options, 
-  app);
+// const options = {
+//   key: fs.readFileSync('../ssl/privateKey.pem'),
+//   cert: fs.readFileSync('../ssl/anthonygunardi_com_cert.pem'),
+// };
+// const server = https.createServer(
+//   options, 
+//   app);
 const PORT = 5002;
 
 app.use(bodyParser.json()); 
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV !== 'test') {
   mongoose
     .connect(MONGODB_URI,{ useUnifiedTopology: true,useNewUrlParser: true, useFindAndModify: false })
     .then(()=> {
-          server.listen(PORT);
+          app.listen(PORT);
           console.log(`Server Started at port ${PORT}!`)
       })
     .catch(err => {
