@@ -64,6 +64,10 @@ const userSchema = new Schema({
     pauli_persentase_benar: {
       type:String,
       default: ''
+    },
+    digit_span: {
+      type:Array,
+      default: []
     }
 });
 module.exports = mongoose.model('Users',userSchema);
