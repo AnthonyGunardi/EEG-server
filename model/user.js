@@ -65,6 +65,10 @@ const userSchema = new Schema({
       type:String,
       default: ''
     },
+    wcst_test: {
+      type:Array,
+      default: []
+    },
     digit_span: {
       type:Array,
       default: []
