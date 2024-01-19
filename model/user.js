@@ -72,6 +72,13 @@ const userSchema = new Schema({
     digit_span: {
       type:Array,
       default: []
+    },
+    is_active: {
+      type: Boolean,
+      default: true
+    },
+    EventId: {
+      type: String
     }
 });
 module.exports = mongoose.model('Users',userSchema);

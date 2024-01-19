@@ -7,7 +7,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const api_key =require('./config/config');
 const authRoutes = require('./routes/auth');
-const userRoutes=require('./routes/user')
+const userRoutes=require('./routes/user');
+const eventRoutes=require('./routes/event');
 const MONGODB_URI =api_key.mongo;
 const app = express();
 // const options = {
@@ -29,6 +30,7 @@ app.use((req, res, next) =>{  // To remove CROS (cross-resource-origin-platform)
 })
 app.use(authRoutes);
 app.use(userRoutes);
+app.use(eventRoutes);
 app.get('/', (req,res) => {
   res.send('Welcome to EEG Assesment API')
 });

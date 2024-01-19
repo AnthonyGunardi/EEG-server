@@ -1,7 +1,7 @@
 {
-  "name": "food-menu-api",
+  "name": "eeg-stimulus-api",
   "version": "1.0.0",
-  "description": "API for Food Menu App",
+  "description": "API for EEG Stimulus",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
