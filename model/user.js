@@ -77,7 +77,7 @@ const userSchema = new Schema({
       type: Boolean,
       default: true
     },
-    EventId: {
+    event_id: {
       type: String
     }
 });
