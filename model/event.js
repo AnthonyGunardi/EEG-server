@@ -17,6 +17,10 @@ const eventSchema = new Schema({
     end_date:{
       type:Date,
       required:true,
+    },
+    is_active:{
+      type:Boolean,
+      default:false
     }
 });
 
