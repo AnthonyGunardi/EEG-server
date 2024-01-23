@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const eventSchema = new Schema({
-    nama_event:{
+    name:{
         type:String,
         required:true,
     },
-    deskripsi_event:{
+    description:{
       type:String,
       default: ''
     },
