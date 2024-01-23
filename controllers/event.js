@@ -3,7 +3,7 @@ const Event = require('../model/event');
 exports.getEvents = async(req,res) => {
   try {
       const events= await Event.find().sort({ _id: -1 });
-      res.status(200).json(users);
+      res.status(200).json(events);
   } catch (error) {
       res.status(404).json({ message: error.message });
   }
