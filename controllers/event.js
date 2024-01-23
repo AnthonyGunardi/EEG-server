@@ -1,5 +1,15 @@
 const Event = require('../model/event');
 
+exports.getEventById = async(req,res) => {
+  const { id } = req.params;
+  try {
+      const event = await Event.findById(id)
+      res.status(200).json(event);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+};
+
 exports.getEvents = async(req,res) => {
   try {
       const events= await Event.find().sort({ _id: -1 });
