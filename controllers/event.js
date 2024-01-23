@@ -1,10 +1,9 @@
 const Event = require('../model/event');
 
-exports.getUserById = async(req,res) => {
-  const { id } = req.params;
+exports.getEvents = async(req,res) => {
   try {
-      const user = await User.findById(id)
-      res.status(200).json(user);
+      const events= await Event.find().sort({ _id: -1 });
+      res.status(200).json(users);
   } catch (error) {
       res.status(404).json({ message: error.message });
   }
@@ -24,14 +23,3 @@ exports.getActiveEvents = async(req,res) => {
   }
 };
 
-exports.updateUserById = async(req,res) => {
-  const { id } = req.params;
-  try {
-      const updatedUser = await User.findByIdAndUpdate(
-        req.params.id, { $set: req.body }, { new: true }
-      )
-      res.status(200).json(updatedUser);
-  } catch (error) {
-      res.status(404).json({ message: error.message });
-  }
-};

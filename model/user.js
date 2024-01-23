@@ -1,84 +1,65 @@
+const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    nama_lengkap:{
+    fullname:{
         type:String,
         required:true,
     },
-    nama_panggilan:{
+    nickname:{
       type:String,
       required:true,
     },
-    tanggal_lahir:{
+    password:{
+      type:String
+    },
+    birthday:{
+      type:String
+    },
+    hometown:{
+      type:String
+    },
+    gender:{
+      type:String
+    },
+    father:{
+      type:String
+    },
+    mother:{
+      type:String
+    },
+    junior_highschool:{
+      type:String
+    },
+    senior_highschool:{
+      type:String
+    },
+    favorite_color:{
+      type:String
+    },
+    is_active:{
+      type:Boolean,
+      default:true
+    },
+    event_id:{
+      type:ObjectId
+    },
+    digitspan_test: {
+      type:Number
+    },
+    pauli_test: {
+      type:Number
+    },
+    wcst_test:{
+      type:Object
+    },
+    validation_test:{
+      type:Array
+    },
+    status:{
       type:String,
-      required:true,
-    },
-    kota_kelahiran:{
-      type:String,
-      required:true,
-    },
-    jenis_kelamin:{
-      type:String,
-      required:true,
-    },
-    nama_ayah:{
-      type:String,
-      required:true,
-    },
-    nama_ibu:{
-      type:String,
-      required:true,
-    },
-    nama_smp:{
-      type:String,
-      required:true,
-    },
-    nama_sma:{
-      type:String,
-      required:true,
-    },
-    warna_favorit:{
-      type:String,
-      required:true,
-    },
-    nama_perusahaan: {
-      type:String,
-      default: ''
-    },
-    jabatan: {
-      type:String,
-      default: ''
-    },
-    extraversion_scale: {
-      type:String,
-      default: ''
-    },
-    conscienceness_scale: {
-      type:String,
-      default: ''
-    },
-    forSales_scale: {
-      type:String,
-      default: ''
-    },
-    pauli_persentase_benar: {
-      type:String,
-      default: ''
-    },
-    wcst_test: {
-      type:Array,
-      default: []
-    },
-    digit_span: {
-      type:Array,
-      default: []
-    },
-    is_active: {
-      type: Boolean,
-      default: true
-    },
-    event_id: {
-      type: String
+      required:true
     }
 });
+
 module.exports = mongoose.model('Users',userSchema);
