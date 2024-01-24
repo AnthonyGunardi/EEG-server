@@ -41,10 +41,7 @@ const userSchema = new Schema({
       type:Boolean,
       default:true
     },
-    // event_id:{
-    //   type:ObjectId,
-    // },
-    events:{
+    userEvents:{
       type:ObjectId,
       ref:'Events'
     },
